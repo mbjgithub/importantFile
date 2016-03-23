@@ -1,0 +1,55 @@
+cd E:
+cd GitRepository
+cd testgit
+git branch
+cat readme.txt
+git status
+git checkout -b 'dev'
+git branch 'dev1'
+git branch
+git checkout 'dev1'
+git branch
+git log
+--当前是在dev1分支上，现在手动修改readme.txt
+cat readme.txt
+git status
+git add readme.txt
+git commit -m "readme.txt mbj dev1"
+git status
+git checkout master
+cat readme.txt         
+//在master分支上并不会显示修改的内容"mbj",因为修改的内容在dev1分支上
+git merge dev1  //在master分支下,合并dev1的内容到master分支中
+cat readme.txt  //现在可以查看到在dev1分支上修改的内容"mbj"
+git branch -d dev1
+git checkout dev
+--在当前的dev分支上修改readme.txt，修改的内容为"wmy--dev"
+git add readme.txt
+git commit -m "wmy--dev reademe.txt dev"
+git status
+cat readme.txt   //可以查看到修改的"wmy--dev"内容
+git checkout master
+cat readme.txt  //看不到修改的"wmy--dev"内容，原因是修改的内容在dev分支上，因为你git commit -m "提示信息" commit到的是dev分支，并不是在master分支
+git branch -d dev  
+//出现下述错误提示信息：
+error:The branch 'dev' is not fully merge
+if you are sure you want to delete it,run 'git barch -D dev'
+git checkout dev
+git branch -D dev
+//出现如下错误：
+error:Cannot delete th branch 'dev' which you are currently on.
+git checkout matser
+git branch -D dev
+git branch 
+cat readme.txt
+git checkout -- readme.txt
+git status 
+//修稿readme.txt内容为"git checkout -- readme.txt test"
+cat readme.txt
+git status
+git checkout -- readme.txt
+git status
+cat readme.txt
+git reset --hard HEAD^  //每commit一次，就生成一个新版本HEAD^回退到上一个版本，
+git reset --hard HEAD^^ //HEAD^^回退到上上个版本
+git reset --hard HEAD~100 //回退到前100个版本

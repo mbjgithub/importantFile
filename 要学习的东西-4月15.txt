@@ -1,0 +1,31 @@
+（1）js特效，特效每天都要，学习特效就是学习css3和js
+（2）学习jQuery和json，还有ajax
+（3）学习ECharts
+（4）学习canvas
+（5）学习html5
+（6）学习jsp和Java web框架，比如spring+springmvc+hibernate
+（7）报名阿里巴巴的前端实习生，要通过笔试，面试，最迟4月15号报名---网申
+ 
+                                 前端开发工程师岗位要求：
+我们希望你，可以熟练使用各种 Web 前端技术，包括HTML(5)/CSS(3)/Javascript 等，并有相关的项目开发经验或成果；我们希望你，用过git，grunt或gulp等工具，最好有自己的github仓库； 
+我们希望你，有基于Ajax 应用的开发经验，有NodeJS/Java开发经验，或者有移动端开发经验；深刻理解 Web 标准，对可用性、可访问性等相关知识有实际的了解； 对算法、数据结构、建模有一定了解； 
+我们希望你，关注新事物、新技术，有较强的学习能力，喜欢挑战；并且，个性乐观开朗，逻辑性强，善于和各种背景的人合作。 
+
+技术要求：
+（1）HTML(5)/CSS(3)/Javascript
+（2）github:分布式的版本控制系统
+（3）GIT ：分布式版本控制系统
+（4）grunt：自动化。对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等
+（5）gulp：能对网站资源进行优化，而且在开发过程中很多重复的任务能够使用正确的工具自动完成
+（6）Node.js：是运行在服务器端的JavaScript
+（7）Ajax：AJAX = 异步（对需要刷新的网页部分刷新）JavaScript和XML，与服务器交换数据并更新部分网页的艺术,在不重新加载整个页面的情况下，ajax是javascript的一个应用方向，主要是通过javascript异步访问服务器端的数据（通常是XML数据或Json数据），来实现无刷新更新页面内容，或提交信息。
+（8）移动端开发
+（9）Web 标准：结构（Structure）、表现（Presentation）和行为（Behavior）
+（10）算法、数据结构、建模
+
+
+
+
+(1)http://echarts.baidu.com/examples.html      echarts网址
+(2)http://www.tractrac.com/     他们用的早期的applet技术，你选一个已经比过的赛事就可以看到
+(3)http://www.ydcss.com/archives/18            gulp入门

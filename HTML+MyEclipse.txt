@@ -1,0 +1,155 @@
+一、JAVA总结
+scriptlet:小脚本程序 <% java代码 %>，运行在<%%>之间的Java代码就是scriptlet
+applet:在网页中使用的。采用Java编写的小应用程序，applet在<applet code="h.class"></applet>标签中
+servlet:用Java编写的服务器端程序
+
+eclipse是一个集成开发环境，也就是IDE，JDK是java开发工具包
+
+JAVA是在JVM也就是JAVA虚拟机上运行的，而通过JDK的编译可以使你编写的程序在JVM上运行，而eclipse的出现则是让你编写程序更加的轻松方便。 
+
+说到运行环境和开发工具的区别就是：
+程序通过开发工具开发出来，而通过运行环境来运行
+没有说包含的关系，是相辅相成的，eclipse是开发工具，但是不用eclipse你直接使用记事本也是可以开发程序的，只是开发起来十分费劲。
+
+J2SE：Java Platform, Standard Edition，基础的、适合学习的标准版
+J2EE：Java Platform, Enterprise Edition，企业版
+J2ME：Java Platform, Micro Edition，移动版，用于开发手机游戏
+
+二、HTML+CSS总结
+.className p{}这种选择器的写法是表示选择类名为className下的p标签
+.className1,.className2{}表示className1和className2的样式都相同，用逗号分隔是表示同级样式，用空格分隔表示的是子选择器
+
+一个重要的html经验：样式有3中写法，第一，将样式写在外部的.css文件中，第二，写在<style>标签中，第三，直接写在标签的style属性中，当我们使用document.getElementById("IdName")去取某标签的样式值的时候，第一种和第二种去不了，只有第三种可以取到，也就是说，document.getElementById("IdName").style.width这样取得值是在标签的style中的width的值，其他地方定义的width的值不管用，要明白document.getElementById("IdName").style.width是.style.width,强调的是style的width
+
+HTML回顾：
+<html>
+ <head>
+  <title>CMS标签大集合</title>
+  <style type="text/css">
+   .box{
+     font-size:36px;
+     color:green;
+     font-weight:bold;
+   }
+   #box1{
+     font-size:48px;
+     color:yellow;
+     font-weight:bold;
+   }
+   #bd{
+     border:1px solid orange;
+   }
+  </style>
+  <link type="text/css" rel="stylesheet" href="<cms:link>/system/modules/com.mysite.example/resources/myfirstcss.css</cms:link>">
+  <cms:editable />
+ </head>
+ <body>
+  <div id="bd">
+  <p>这个使用的是外部的CSS</p>
+  <p style="color:blue;font-size:24px">这个使用的是内联样式</p>
+  <p class="box">这个使用的是嵌入式样式的类嵌入式，采用.选择器的名字</p>
+  <p id="box1">这个是ID选择器,采用#选择器名字</p>
+  </div>
+ </body>
+</html>
+
+#TB_window a:link {color: #666666;}
+#TB_window a:visited {color: #666666;}
+#TB_window a:hover {color: #000;}
+#TB_window a:active {color: #666666;}
+#TB_window a:focus{color: #666666;}
+
+现在的情况是我把default的style.layout属性值删除了
+
+<!-- 注释内容 -->    这是html的注释
+/* 注释内容 */       这是css的注释
+ <%--  --%>          这是在jsp中的注释
+//                   这是在JavaScript中的注释
+
+padding:元素内容和边框之间的距离
+         margin：元素边框和外面元素的距离
+         border：元素边框
+在网页中，元素有3种布局模型，流动模型（Flow）、浮动模型（FLoat）、层模型（Layer）
+Flow是网页元素的默认布局模型，要想变成Float布局模型，需要设置元素的width，和float:left
+Layer布局模型是通过设置元素的position样式的，position：absolute;绝对定位，相对于父级元素，且父级元素样式中有position：relative;才有效，在设置了position：absolute;之后，设置left：20px;top：40px;表示相对于上面说到的父级元素向右移动20px，向下移动40px，position：relative;表达的是相对于此元素原来的位置的偏移,position：absolute这个是绝对定位；是相对于浏览器的定位。比如：position：absolute；left:20px;top:80px; 这个容器始终位于距离浏览器左20px,距离浏览器上80px的这个位置。position：relative是相对定位，是相对于前面的容器定位的。这个时候不能用top left在定位。应该用margin。
+         list-style-type:none; /*设置列表的格式为none，列表的格式有前面加圆点，加*号等等*/
+         /*display:block;此元素将显示为块级元素，块级元素单独占一行，display:none;此元素将不显示*/
+         text-decoration:none; /*css文字修饰为无，一般用于消除超链接默认的下划线*/
+          /*a.current表达的是当前显示页面的a*/
+          /*a.hover表达的是获得焦点的a*/
+float:right;这个样式可以解决显示的内容太靠右边，也就是说，可以让显示的内容往左边靠
+background:#fff url("../iamges/img.png") repeat-x top left fixed;
+背景颜色 背景图片 向x方向重复 背景图片的显示位置是top和left 背景图片是固定的，不随页面的滚动而滚动，scroll就表示随着页面的滚动，背景图片滚动
+
+margin:0 auto;表示此容器相对于他的父容器水平居中（这个是经常用的噢，特别是在firefox中很多时候text-align会不起作用，就要用这个了）,top以containing block的content上边或者垂直上方相连元素margin的下边为参考线垂直向下位移；left以containing block（没有设置position定位时，是父元素，设置了position后，是最近的position元素 ）的content左边或者水平左方相连元素margin的右边为参考线水平向右位移。right以元素本身的border右边为参考线水平向右位移；bottom以元素本身的border下边为参考线垂直向下位移。从上我们可以看到top和left都是以外元素为参考，而right和bottom以本元素为参考。默认position的top和left都为0px，即：
+        <div style="border:1px solid blue;position:absolute;width:100px;height:100px;">
+        </div>
+        <div style="border:1px solid red;position:absolute;width:100px;height:100px;">
+        </div>
+  这样，在浏览器中你只能看到红色的边框，因为蓝色的边框已经被覆盖掉了
+line-height 定义每一行的高度，一般用于内联元素
+fixed:背景图片是固定的，不跟随内容一起滚动
+scroll：背景图片跟随内容一起滚动
+top和left是图片的起始位置
+
+clear:both  表示清除前面的多个div的float，即float：left；float：right；
+
+word-break:break-all,表示如果字的数目超过元素的边框，那么超出的自动换行，这样就不会超出界限了
+text-indent:30px；首行缩进30px
+text-overflow:ellipsis;文本溢出包含元素的宽度时，用...代表不能溢出的部分
+white-space: nowrap;表示文本不换行，一直在一行上面显示下去，除非遇到<br>
+{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}只有这三个样式同时使用才会出现超出的文本用省略号表示
+
+css文件中出现@media all,其中“all”表示的是支持所有媒体介质，比如媒体介质是screen的时候，就引用该样式，@media print,表示打印的时候引用的样式
+
+
+几乎所有的网页里，我们可以看到类似下面这段的html代码：＜head＞＜meta http-equiv="content-Type" content="text/html; charset=gb2312"＞＜/head＞也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，例如加入关键字会自动被大型搜索网站自动搜集；可以设定页面格式及刷新等等。
+一、meta标签的组成
+meta标签共有两个属性，它们分别是http-equiv属性和name属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。
+1、name属性
+name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
+meat标签的name属性语法格式是：＜meta name="参数" content="具体的参数值"＞。
+其中name属性主要有以下几种参数：
+A、Keywords(关键字)
+举例：＜meta name ="keywords" content="science, education,culture,politics,ecnomics，relationships, entertaiment, human"＞
+B、description(网站内容描述)
+说明：description用来告诉搜索引擎你的网站主要内容。
+举例：＜meta name="description" content="This page is about the meaning of science, education,culture."＞
+C、robots(机器人向导)
+content的参数有all,none,index,noindex,follow,nofollow。默认是all。
+举例：＜meta name="robots" content="none"＞
+D、author(作者)
+说明：标注网页的作者
+
+AlphaImageLoader：在元素的背景和内容之间插入一张图片，并提供对此图片的剪切和改变尺寸的操作。如果载入的是PNG(Portable Network Graphics)格式，则0%-100%的透明度也被提供。
+语法格式：filter : progid:DXImageTransform.Microsoft.AlphaImageLoader ( enabled=bEnabled , sizingMethod=sSize , src=sURL )
+enabled：可选项，布尔值(Boolean)。设置或检索滤镜是否激活。 true：默认值。滤镜激活。 false：滤镜被禁止。
+sizingMethod：可选项。字符串(String)。设置或检索滤镜作用的对象的图片在对象容器边界内的显示方式。
+1）crop：剪切图片以适应对象尺寸。
+2）image：默认值。增大或减小对象的尺寸边界以适应图片的尺寸。 
+3）scale：缩放图片以适应对象的尺寸边界。
+src：必选项。字符串(String)。使用绝对或相对 url 地址指定背景图像。假如忽略此参数，滤镜将不会作用。
+position:relative;  relative的意思是相对于原来元素的位置移动了多少，并且，relative  不会脱离文档流，不管有没有设置left，top属性，而且元素原来的位置并不会释放，即其他的元素不能使用该元素原来的位置
+left:100px;  相对于元素原来的位置向右移动100px
+left:-100px; 相对于元素原来的位置向左移动了多少，和right:100px效果相同
+position:absolute; 绝对定位，如果没有设置top，left，那么也不会脱离文档流，设置了就脱离文档流，以最近一个设置了定位的元素为父元素，直到以body为父容器
+margin-left:-100px; 表示向左移动100px，但是和margin-right:100px不等价,配合float：left使用
+margin-left:100px;  表示向右移动100px
+margin-left:100%;   表示向右移动父元素宽度
+margin-left:-100%;  表示想左移动父元素宽度
+display:block;      元素的显示方向是垂直向下的
+display:inline;     元素的显示方向是水平向右的,紧贴着上一个内联元素
+float:left;  设置了该属性的块状元素变为内联元素，且向左浮动，该元素脱离文档流，也就是说不按块状元素从上到下显示，而是紧贴着父容器的左右边框，即width，而不是padding或者margin，当多个浮动的块状元素一起在一行显示时，浏览器长度不够时才会换行，和内联元素的特性一样，现在我们来说说html元素什么时候会换行，第一，只要是块状元素就很霸道，它一个人要占一行，所以下一个元素要换行，第二，许多内联元素一行方不下的时候会换行.float:left;的作用通俗一点的说就是将块状元素变为可以设置width和height的内联元素。
+clear:both;清除左右浮动，即清除float:left;float:right;属性
+clear:left;clear:right;清除左浮动或者右浮动
+
+三、JAVASCRIPT总结
+（1）大前提：当用到一些window和document对象的属性和一些内在的方法时，要考虑是IE4还是NS6或者NS4一般是NS6，IE4应该是在IE中才会出现
+（2）window.pageXOffset  当页面有横向滚动条时，向右拉了多远就是pageXOffset
+（3）window.pageYOffset  当页面有纵向滚动条时，向下拉了多元就是pageYOffset
+（4）window.scrollBy(xnum,ynum);使滚动条向右移动xnum px，向下移动ynum px；
+（5）window.innerWidth   当前窗口的width
+（6）window.innerHeight  当前窗口的height
+（7）document.images["pic"].width; 获得属性name="pic"的img图片的width，height
+（8）<a href="javascript:functionName()"> 当点击该超链接的时候，执行一个js函数functionName();
+（9）document.location.href="index.html"; 表示显示的是index.html文件，而不是你打开的这个html文件
