@@ -53,3 +53,19 @@ cat readme.txt
 git reset --hard HEAD^  //每commit一次，就生成一个新版本HEAD^回退到上一个版本，
 git reset --hard HEAD^^ //HEAD^^回退到上上个版本
 git reset --hard HEAD~100 //回退到前100个版本
+//当在本地新建了一个目录upload ，
+cd E:
+cd GitRepository
+cd upload
+git init   //将upload目录变为git可以管理的仓库，并且生成隐藏文件.git
+//在upload下保存一些文件
+ls 
+git add --a    //将所有文件关联到暂存区
+git commit -m "message"
+//在github仓库中也新建了一个目录importantFile,包含一个默认生成的README.MD
+git remote origin https://github.com/mbgithub/importantFile
+git push -u origin master
+//会出现错误，错误原因是远程的README.MD文件本地没有，
+git pull --rebase origin master  //将远程的文件抓到本地来
+git push -u origin master   //这样就成功了
+
